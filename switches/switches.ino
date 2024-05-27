@@ -13,10 +13,10 @@ const int switchwait = 1500;
 void changeSwitch1(bool inwards) {
   if (inwards) {
     DCC_send_command(DCCaddress_decoder, DCCswitch1, 1);
+    DCC_send_command(DCCaddress_decoder, DCCswitchidle, 1);
     Serial.println("STATUS: Switch 1 changed inward");
   } else {
     DCC_send_command(DCCaddress_decoder, DCCswitch1, 1);
-    DCC_send_command(DCCaddress_decoder, DCCswitchidle, 1);
     Serial.println("STATUS: Switch 1 changed outward");
   }
 }

@@ -1,9 +1,18 @@
-void setup() {
-  // put your setup code here, to run once:
+// A short program that periodically writes the raw temperature sensor readings to serial
+// Written by Geoffrey Frankhuizen
 
+// Wire connections:
+// D20 -> A
+// GND -> GND (on the right)
+
+#define TEMP_SENSOR A6
+
+void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  char strBuf[50];
+  sprintf(strBuf, "Raw temperature: %d", analogRead(TEMP_SENSOR));
+  Serial.println(strBuf);
+  delay(50);
 }

@@ -1,14 +1,35 @@
+// A short program that demonstrates how to read the state of the train sensors 
+// through the MCP23017
+// Originally written by Niels Althuisius
+// Adapted by Geoffrey Frankhuizen
+// Using code from Jeroen Tas to assign alternative i2c pins
+
+// Wire connections:
+// D2 -> INT0
+// D3 -> INT1
+// D6 -> SDA
+// D5 -> SCL
+// GND -> GND (on the right)
+
 #include <MCP23017.h>
+#include "Arduino.h"
+#include "wiring_private.h"
 
 #define INT0  2
 #define INT1  3
+#define I2C_2_SDA_PIN   6
+#define I2C_2_SCL_PIN   5
 
-MCP23017 mcp = MCP23017(0x26); 
+TwoWire secondWire(&sercom0, I2C_2_SDA_PIN, I2C_2_SCL_PIN);
+MCP23017 mcp = MCP23017(0x26,  secondWire); 
 
 void setup() {
   pinMode(INT0, INPUT_PULLUP);
   pinMode(INT1, INPUT_PULLUP);
   pinMode(LED_BUILTIN, OUTPUT);
+
+  pinPeripheral( I2C_2_SDA_PIN, PIO_SERCOM_ALT );   //Assign SDA function
+  pinPeripheral( I2C_2_SCL_PIN, PIO_SERCOM_ALT );   //Assign SCL function
 
   init_mcp();
   init_interrupts();
@@ -21,9 +42,8 @@ void loop() {
   delay(500);
 }
 
-
 void init_mcp() {
-    Wire.begin();
+    secondWire.begin();
     mcp.init();
     mcp.writeRegister(MCP23017Register::IODIR_A, (unsigned char )0xff);
     mcp.writeRegister(MCP23017Register::IODIR_B, (unsigned char )0xff);

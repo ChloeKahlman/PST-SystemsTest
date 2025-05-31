@@ -2,12 +2,12 @@
 // Written by Geoffrey Frankhuizen
 
 // Wire connections:
-// D11 -> EN (MOTOR B)
-// D12 -> STP (MOTOR B)
-// D13 -> DIR (MOTOR B)
-// D14 -> EN (MOTOR A)
-// D15 -> STP (MOTOR A)
-// D16 -> DIR (MOTOR A)
+// D2 -> EN (MOTOR A)
+// D3 -> STP (MOTOR A)
+// D4 -> DIR (MOTOR A)
+// D5 -> EN (MOTOR B)
+// D6 -> STP (MOTOR B)
+// D7 -> DIR (MOTOR B)
 // GND -> M0 (MOTOR A)
 // GND -> M1 (MOTOR A)
 // GND -> M2 (MOTOR A)
@@ -16,15 +16,15 @@
 // GND -> M2 (MOTOR B)
 // 3.3V -> SLP
 
-#define MOT_B_EN 11
-#define MOT_B_STP 12
-#define MOT_B_DIR 13
-#define MOT_A_EN 14
-#define MOT_A_STP 15
-#define MOT_A_DIR 16
+#define MOT_A_EN 2
+#define MOT_A_STP 3
+#define MOT_A_DIR 4
+#define MOT_B_EN 5
+#define MOT_B_STP 6
+#define MOT_B_DIR 7
 
 #define STEP_DELAY 1000
-#define NUMBER_OF_STEPS 10000
+#define NUMBER_OF_STEPS 2500
 
 #define MOTOR_A 0
 #define MOTOR_B 1

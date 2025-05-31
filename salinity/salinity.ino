@@ -2,10 +2,10 @@
 // Written by Geoffrey Frankhuizen
 
 // Wire connections:
-// D17 -> B3
+// D16 -> B3
 // GND -> GND (on the right)
 
-#define SAL_SENSOR A3
+#define SAL_SENSOR A2
 
 void setup() {
 }

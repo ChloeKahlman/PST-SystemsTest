@@ -2,12 +2,12 @@
 // Written by Geoffrey Frankhuizen
 
 // Wire connections:
-// D2 -> HTR
-// D5 -> SW1
+// D9 -> HTR
+// D13 -> SW1
 // GND -> GND (on the right)
 
-#define HEATER 2
-#define SWITCH 5
+#define HEATER 9
+#define SWITCH 13
 
 void setup() {
   pinMode(HEATER, OUTPUT);

@@ -1,11 +1,28 @@
-#define SWITCH1 7
-#define SWITCH2 8
-#define SWITCH3 9
-#define SWITCH4 10
-#define LED1 11
-#define LED2 12
-#define LED3 13
-#define LED4 14
+// A short program that allows the user to test the buttons, LEDs, potentiometer and buzzer
+//
+// Written by Chloe Kahlman
+// Adapted by Geoffrey Frankhuizen
+
+// Wire connections:
+// D8 -> LD1
+// D9 -> LD2
+// D10 -> LD3
+// D11 -> LD4
+// D12 -> SW1
+// D13 -> SW2
+// D14 -> SW3
+// D15 -> SW4
+// D20 -> POT
+// D21 -> BUZ
+
+#define LED1 8
+#define LED2 9
+#define LED3 10
+#define LED4 11
+#define SWITCH1 12
+#define SWITCH2 13
+#define SWITCH3 14
+#define SWITCH4 15
 #define POT A6
 #define BUZ 21
 

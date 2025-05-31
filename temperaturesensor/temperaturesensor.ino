@@ -2,10 +2,10 @@
 // Written by Geoffrey Frankhuizen
 
 // Wire connections:
-// D20 -> A
+// D17 -> A
 // GND -> GND (on the right)
 
-#define TEMP_SENSOR A6
+#define TEMP_SENSOR A3
 
 void setup() {
 }
